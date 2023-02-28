@@ -2,4 +2,4 @@
 .csr
 .key
 passwd
-lestencrypt/
+lestencrypt/*
