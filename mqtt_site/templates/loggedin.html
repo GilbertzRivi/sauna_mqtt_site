@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sauna controller</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        html{
+            background-color: #1d1d1d;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        .submit {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.241);
+        }
+        .submit:hover{
+            background-color: #39863c;
+        }
+
+        main{
+            background-color: #2b2b2b;
+            border-radius: 15px;
+            margin: auto;
+            width: 25%;
+            padding: 20px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+
+        input{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background-color: #1d1d1d;
+            border-radius: 15px;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            border: transparent;
+        }
+
+        label{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+        }
+
+        .flexrow{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        main > div{
+            padding: 10px;
+            text-align: center;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+        }
+
+        #change-status{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.241);
+        }
+
+        #change-status:hover{
+            background-color: #39863c;
+        }
+
+        @media screen and (max-width: 600px){
+            main{
+                width: 80%;
+            }
+            .input-text{
+                width:70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id='status'>Status: {{ status }}</div>
+        <div id='temperature'>Temperature: {{ T }}C</div>
+        <div id='humidity'>Humidity: {{ H }}%</div>
+        <div id="statusButton">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="submit" name='ON' value='ON' id="ON">
+            </form>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="submit" name='OFF' value='OFF' id="OFF">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
